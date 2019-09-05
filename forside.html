@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolie</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link href="https://fonts.googleapis.com/css?family=Actor%7cHomemade+Apple&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Marcellus&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        @media screen and (min-width:600px) {
+            .liste {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (min-width:960px) {
+            .liste {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        body {
+            background-color: #328064;
+        }
+
+        .nav {
+            text-align: left;
+        }
+
+        .nav {
+            font-family: 'Kite One', sans-serif;
+            letter-spacing: 1.5px;
+            color: white;
+            /*background-color: #B36957;*/
+            border: none;
+            font-size: 30px;
+            margin: 17px;
+        }
+
+
+        #info {
+            display: flex;
+            justify-content: center;
+            background-color: #78BBCC;
+            margin: 10px;
+
+        }
+
+        #info p {
+            margin: 30px;
+            font-family: 'Exo', sans-serif;
+            color: black;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <div class="nav">
+
+            <a href="Babruska.html">MENU</a>
+
+        </div>
+    </header>
+    <section id="forside">
+        <div class="sectionwrapper">
+            <div class="col">
+                <a href="Babruska.html"> <img src="SVG/Artboard%201.svg" alt="forside"></a>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div id="info">
+            <p>
+                Adresse: Grønnegade 97<br>
+                1234 København K
+            </p>
+            <p>
+                Åbningstider: Mandag-Fredag 10:30 - 22:00<br>
+                Lørdag 12:00 - 23:00
+            </p>
+        </div>
+
+
+
+    </footer>
+</body>
+
+</html>

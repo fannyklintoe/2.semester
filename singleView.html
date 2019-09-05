@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .indhold {
+            width: 70vw;
+            min-height: 50vh;
+            background: #fff;
+            margin: 4rem auto;
+            padding: 10px;
+        }
+
+        .luk {
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main id="single">
+        <button class="luk">Tilbage</button>
+        <section class="indhold">
+            <article class="menu">
+                <h2></h2>
+                <img src="" alt="s">
+                <p class="menu"></p>
+                <p class="pris"></p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let retter retter.gsx$kategori.$t = urlParams.get("retter");
+        let retter;
+        document.addEventListener("DOMContentLoaded", getJson);
+        async function getJson() {
+            let jsonData = await fetch("https://spreadsheets.google.com/feeds/list/17Dd7DvkPaFamNUdUKlrFgnH6POvBJXac7qyiS6zNRw0/od6/public/values?alt=json");
+            retter = await jsonData.json();
+            start();
+        }
+
+        function start() {
+            dest.innerHTML = "";
+
+
+            retter.feed.entry.forEach((retter) => {
+                if (filter == "alle" || filter == retter.gsx$kategori.$t) {
+
+                    const klon = temp.cloneNode(true).content;
+
+                    klon.querySelector("h2").textContent = retter.gsx$navn.$t;
+                    klon.querySelector(".pris").textContent = retter.gsx$pris.$t;
+                    klon.querySelector(".menu").textContent = retter.gsx$kort.$t;
+                    klon.querySelector("img").src = `large/${retter.gsx$billede.$t}.jpg`;
+
+                }
+            })
+        }
+
+        /*
+                function visPerson() {
+
+                    personer.feed.entry.forEach(person => {
+                        if (person.gsx$github.$t == github) {
+                            document.querySelector("h2").textContent = retter.gsx$navn.$t;
+                            document.querySelector(".billede").src = retter.gsx$billede.$t;
+                            document.querySelector(".billede").alt = retter.gsx$navn.$t;
+                            document.querySelector(".github").href = `http://github.com/${person.gsx$github.$t}`;
+                            document.querySelector(".github").textContent = person.gsx$github.$t;
+                            document.querySelector(".historie").textContent = person.gsx$historie.$t;
+                        }
+
+                    })
+                }*/
+
+        document.querySelector(".lukSingle").addEventListener("click", () => {
+            history.back();
+        })
+
+    </script>
+</body>
+
+</html>
